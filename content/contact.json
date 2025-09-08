@@ -1,0 +1,38 @@
+{
+  "title": "Contact Our Experts",
+  "subtitle": "Get professional guidance for your trademark and copyright needs",
+  "contactInfo": {
+    "email": "info.codesandtags@gmail.com",
+    "phone": "+91-9884056282",
+    "whatsapp": "+91-9884056282",
+    "address": "Chennai, Tamil Nadu 600001, India"
+  },
+  "officeHours": {
+    "weekdays": "9:00 AM - 7:00 PM",
+    "saturday": "10:00 AM - 4:00 PM", 
+    "sunday": "Closed (Emergency support available)"
+  },
+  "services": {
+    "trademark": [
+      "Trademark search and clearance",
+      "Trademark registration",
+      "Trademark renewal",
+      "Opposition and rectification",
+      "International trademark filing"
+    ],
+    "copyright": [
+      "Copyright registration", 
+      "Software copyright",
+      "Literary work copyright",
+      "Artistic work copyright",
+      "Copyright infringement handling"
+    ],
+    "msme": [
+      "MSME registration",
+      "Business compliance",
+      "Legal documentation", 
+      "Startup advisory",
+      "IP strategy consultation"
+    ]
+  }
+}
