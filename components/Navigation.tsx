@@ -59,7 +59,7 @@ export default function Navigation() {
                       href="/blog" 
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
                     >
-                      Blog
+                      Blog (Coming Soon)
                     </Link>
                     <a 
                       href="https://wa.me/919884056282?text=Hi,%20I%20need%20help%20with%20copyright%20registration" 
@@ -133,7 +133,7 @@ export default function Navigation() {
                 className="text-gray-700 hover:text-primary transition-colors"
                 onClick={closeMenu}
               >
-                Blog
+                Blog (Coming Soon)
               </Link>
               <Link 
                 href="/contact" 
