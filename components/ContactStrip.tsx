@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
 
