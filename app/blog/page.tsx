@@ -4,11 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Clock, Users } from 'lucide-react';
 
-export const metadata = {
-  title: 'Blog - Codes & Tags',
-  description: 'Latest insights on trademark registration, copyright protection, and intellectual property law in India.',
-};
-
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gray-50">
