@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Users, Clock, Shield } from 'lucide-react';
 
