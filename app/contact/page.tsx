@@ -44,7 +44,7 @@ export default function ContactPage() {
               <Button 
                 variant="outline" 
                 className="w-full"
-                onClick={({handleClick}) => window.location.href = 'mailto:info.codesandtags@gmail.com'}
+                onClick={() => window.location.href = 'mailto:info.codesandtags@gmail.com'}
               >
                 info.codesandtags@gmail.com
               </Button>
