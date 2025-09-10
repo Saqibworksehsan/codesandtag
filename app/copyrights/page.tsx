@@ -1,20 +1,20 @@
-
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Clock, FileText, Shield } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Clock, FileText, Shield } from "lucide-react";
+import WhatsAppButton from "@/components/WhatsAppButton"; // import the client button
 
 export const metadata = {
-  title: 'Copyright Registration Services - Codes & Tags',
-  description: 'Protect your creative works with professional copyright registration. Fast, affordable, and reliable copyright filing services in India.',
+  title: "Copyright Registration Services - Codes & Tags",
+  description:
+    "Protect your creative works with professional copyright registration. Fast, affordable, and reliable copyright filing services in India.",
 };
 
 export default function CopyrightsPage() {
   const process = [
-    'Document collection and verification',
-    'Copyright application preparation',
-    'Filing with copyright office',
-    'Follow-up and status tracking',
-    'Certificate delivery'
+    "Document collection and verification",
+    "Copyright application preparation",
+    "Filing with copyright office",
+    "Follow-up and status tracking",
+    "Certificate delivery",
   ];
 
   return (
@@ -59,13 +59,23 @@ export default function CopyrightsPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
-                    <h3 className="text-xl font-semibold text-amber-800 mb-2">Special Offer</h3>
+                    <h3 className="text-xl font-semibold text-amber-800 mb-2">
+                      Special Offer
+                    </h3>
                     <div className="flex items-center space-x-4">
-                      <span className="text-3xl font-bold text-primary">₹4,999</span>
-                      <span className="text-lg text-gray-500 line-through">₹8,999</span>
-                      <span className="bg-red-500 text-white px-2 py-1 rounded text-sm">44% OFF</span>
+                      <span className="text-3xl font-bold text-primary">
+                        ₹4,999
+                      </span>
+                      <span className="text-lg text-gray-500 line-through">
+                        ₹8,999
+                      </span>
+                      <span className="bg-red-500 text-white px-2 py-1 rounded text-sm">
+                        44% OFF
+                      </span>
                     </div>
-                    <p className="text-amber-700 mt-2">Limited time offer - All inclusive package</p>
+                    <p className="text-amber-700 mt-2">
+                      Limited time offer - All inclusive package
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 mt-6">
@@ -83,11 +93,11 @@ export default function CopyrightsPage() {
                     <h4 className="text-lg font-semibold mb-4">What's Included:</h4>
                     <div className="space-y-2">
                       {[
-                        'Complete documentation assistance',
-                        'Government fee included',
-                        'Expert consultation',
-                        'Status tracking updates',
-                        'Certificate delivery'
+                        "Complete documentation assistance",
+                        "Government fee included",
+                        "Expert consultation",
+                        "Status tracking updates",
+                        "Certificate delivery",
                       ].map((item, index) => (
                         <div key={index} className="flex items-center">
                           <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
@@ -97,13 +107,11 @@ export default function CopyrightsPage() {
                     </div>
                   </div>
 
-                  <Button 
-                    size="lg" 
+                  {/* ✅ Client button – no onClick prop passed from server */}
+                  <WhatsAppButton
+                    size="lg"
                     className="w-full mt-6 bg-green-600 hover:bg-green-700 text-lg py-3"
-                    onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20need%20help%20with%20copyright%20registration', '_blank')}
-                  >
-                    Get Started on WhatsApp
-                  </Button>
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -140,21 +148,29 @@ export default function CopyrightsPage() {
                   <Shield className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Legal Protection</h4>
-                    <p className="text-gray-600">Protect your original works from unauthorized use and infringement.</p>
+                    <p className="text-gray-600">
+                      Protect your original works from unauthorized use and
+                      infringement.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <FileText className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Official Recognition</h4>
-                    <p className="text-gray-600">Get government-issued certificate proving your ownership.</p>
+                    <p className="text-gray-600">
+                      Get government-issued certificate proving your ownership.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <h4 className="font-semibold">Lifetime Validity</h4>
-                    <p className="text-gray-600">Copyright protection lasts for the lifetime of the author plus 60 years.</p>
+                    <p className="text-gray-600">
+                      Copyright protection lasts for the lifetime of the author
+                      plus 60 years.
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -167,11 +183,11 @@ export default function CopyrightsPage() {
               <CardContent>
                 <ul className="space-y-2">
                   {[
-                    'Copy of the work to be copyrighted',
-                    'Author identification proof',
-                    'Declaration of ownership',
-                    'Power of attorney (if applicable)',
-                    'NOC from employer (if work for hire)'
+                    "Copy of the work to be copyrighted",
+                    "Author identification proof",
+                    "Declaration of ownership",
+                    "Power of attorney (if applicable)",
+                    "NOC from employer (if work for hire)",
                   ].map((doc, index) => (
                     <li key={index} className="flex items-center">
                       <FileText className="w-4 h-4 text-primary mr-2" />
