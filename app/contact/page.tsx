@@ -4,11 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MessageCircle, MapPin, Clock, Users } from 'lucide-react';
 
-export const metadata = {
-  title: 'Contact Us - Codes & Tags',
-  description: 'Get in touch with our trademark and copyright experts. Multiple ways to reach us for your intellectual property needs.',
-};
-
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
