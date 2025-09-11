@@ -1,12 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Clock, FileText, Shield } from "lucide-react";
-import WhatsAppButton from "@/components/WhatsAppButton"; // import the client button
-
-export const metadata = {
-  title: "Copyright Registration Services - Codes & Tags",
-  description:
-    "Protect your creative works with professional copyright registration. Fast, affordable, and reliable copyright filing services in India.",
-};
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function CopyrightsPage() {
   const process = [
