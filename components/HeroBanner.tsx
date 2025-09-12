@@ -22,76 +22,68 @@ export default function HeroBanner() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-r from-primary via-blue-700 to-blue-800 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-black/10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)',
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-
+    <section className="relative bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 py-20 md:py-32 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl font-light leading-tight minimal-heading">
                 <span className="block transition-all duration-500 ease-in-out">
                   {texts[currentText]}
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100">
+              <p className="text-xl md:text-2xl minimal-text">
                 India's most trusted trademark and copyright registration experts. 
                 Protect your intellectual property with our professional services.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-4 text-center">
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="text-2xl font-bold">5000+</div>
-                <div className="text-sm text-blue-200">Trademarks Registered</div>
+              <div className="minimal-card p-6 rounded-lg">
+                <div className="text-2xl font-light text-gray-900">5000+</div>
+                <div className="text-sm minimal-text">Trademarks Registered</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="text-2xl font-bold">100%</div>
-                <div className="text-sm text-blue-200">Success Rate</div>
+              <div className="minimal-card p-6 rounded-lg">
+                <div className="text-2xl font-light text-gray-900">100%</div>
+                <div className="text-sm minimal-text">Success Rate</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <div className="text-2xl font-bold">24/7</div>
-                <div className="text-sm text-blue-200">Expert Support</div>
+              <div className="minimal-card p-6 rounded-lg">
+                <div className="text-2xl font-light text-gray-900">24/7</div>
+                <div className="text-sm minimal-text">Expert Support</div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 text-lg"
-                onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20want%20to%20register%20my%20trademark', '_blank')}
+                className="minimal-button px-8 py-3 text-lg"
+                onClick={() => window.location.href = '/trademark-form'}
               >
-                Start Your Trademark Registration
+                Start Trademark Registration
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
-                onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20need%20help%20with%20copyright%20registration', '_blank')}
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg font-light"
+                onClick={() => window.location.href = '/copyright-form'}
               >
                 Copyright Registration
               </Button>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm">
+            <div className="flex items-center space-x-6 text-sm minimal-text">
               <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
+                <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
                 <span>Government Approved</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
+                <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
                 <span>Expert Consultation</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
+                <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
                 <span>Fast Processing</span>
               </div>
             </div>
@@ -99,50 +91,46 @@ export default function HeroBanner() {
 
           {/* Right Content */}
           <div className="relative">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-2xl">
+            <div className="minimal-card p-8 rounded-2xl">
               <div className="space-y-6">
-                <div className="flex items-center justify-center w-20 h-20 bg-amber-500 rounded-full mx-auto">
-                  <Shield className="w-12 h-12 text-black" />
+                <div className="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mx-auto">
+                  <Shield className="w-12 h-12 text-gray-700" />
                 </div>
                 
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
+                  <h3 className="text-2xl font-light minimal-heading mb-4">Why Choose Us?</h3>
                   <div className="space-y-4">
                     <div className="flex items-start text-left">
-                      <CheckCircle className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold">Expert Legal Team</h4>
-                        <p className="text-blue-200 text-sm">Qualified IP attorneys with 10+ years experience</p>
+                        <h4 className="font-medium text-gray-900">Expert Legal Team</h4>
+                        <p className="minimal-text text-sm">Qualified IP attorneys with 10+ years experience</p>
                       </div>
                     </div>
                     <div className="flex items-start text-left">
-                      <CheckCircle className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold">All-Inclusive Pricing</h4>
-                        <p className="text-blue-200 text-sm">No hidden charges, government fees included</p>
+                        <h4 className="font-medium text-gray-900">All-Inclusive Pricing</h4>
+                        <p className="minimal-text text-sm">No hidden charges, government fees included</p>
                       </div>
                     </div>
                     <div className="flex items-start text-left">
-                      <CheckCircle className="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold">Quick Turnaround</h4>
-                        <p className="text-blue-200 text-sm">File applications within 24 hours of documentation</p>
+                        <h4 className="font-medium text-gray-900">Quick Turnaround</h4>
+                        <p className="minimal-text text-sm">File applications within 24 hours of documentation</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-amber-500/20 p-4 rounded-lg border border-amber-400/30">
-                  <p className="text-center font-semibold">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <p className="text-center font-medium text-gray-900">
                     🎉 Limited Time Offer: 50% OFF on all registrations!
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-amber-400 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400 rounded-full opacity-20 animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>
