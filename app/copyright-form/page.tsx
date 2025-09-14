@@ -287,14 +287,14 @@ Please process this application.
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="minimal-button flex-1"
+                      className="bg-red-600 hover:bg-red-700 text-white font-normal flex-1"
                     >
                       {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </Button>
                     <Button 
                       type="button"
                       onClick={handlePayment}
-                      className="bg-blue-600 hover:bg-blue-700 text-white flex-1"
+                      className="bg-gray-600 hover:bg-gray-700 text-white flex-1"
                     >
                       <CreditCard className="w-4 h-4 mr-2" />
                       Pay Now - ₹4,999
@@ -330,7 +330,7 @@ Please process this application.
                       'Lifetime validity'
                     ].map((item, index) => (
                       <div key={index} className="flex items-center text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-red-500 mr-2 flex-shrink-0" />
                         <span className="minimal-text">{item}</span>
                       </div>
                     ))}
