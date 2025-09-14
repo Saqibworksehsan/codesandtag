@@ -35,10 +35,11 @@ export default function Navigation() {
               Home
             </Link>
             <Link href="/trademark-form" className="text-gray-600 hover:text-gray-900 transition-colors font-light">
-              Trademark
+            <Link href="/trademarks" className="text-gray-600 hover:text-gray-900 transition-colors font-light">
+              Trademarks
             </Link>
-            <Link href="/copyright-form" className="text-gray-600 hover:text-gray-900 transition-colors font-light">
-              Copyright
+            <Link href="/copyrights" className="text-gray-600 hover:text-gray-900 transition-colors font-light">
+              Copyrights
             </Link>
             
             {/* Resources Dropdown */}
@@ -104,18 +105,18 @@ export default function Navigation() {
                 Home
               </Link>
               <Link 
-                href="/trademark-form" 
+                href="/trademarks" 
                 className="text-gray-600 hover:text-gray-900 transition-colors font-light"
                 onClick={closeMenu}
               >
-                Trademark
+                Trademarks
               </Link>
               <Link 
-                href="/copyright-form" 
+                href="/copyrights" 
                 className="text-gray-600 hover:text-gray-900 transition-colors font-light"
                 onClick={closeMenu}
               >
-                Copyright
+                Copyrights
               </Link>
               <Link 
                 href="/contact" 

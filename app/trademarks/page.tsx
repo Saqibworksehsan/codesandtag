@@ -1,27 +1,36 @@
 'use client';
 
-'use client';
-
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { CheckCircle, Clock, Shield, Star, Phone, Mail } from 'lucide-react';
+import { CheckCircle, Clock, Shield, Star, CreditCard } from 'lucide-react';
+
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
 
 export default function TrademarksPage() {
-  const [formData, setFormData] = useState({
-    brandName: '',
-    contactNo: '',
-    email: '',
-    description: ''
-  });
+  const handlePayment = () => {
+    const options = {
+      key: 'rzp_test_9WaeLb4ndt8j9E', // Replace with your Razorpay key
+      amount: 699900, // Amount in paise (₹6,999)
+      currency: 'INR',
+      name: 'Codes & Tags',
+      description: 'Trademark Registration Service',
+      image: '/logo2.png',
+      handler: function (response: any) {
+        alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+        // Redirect to form after successful payment
+        window.location.href = '/trademark-form';
+      },
+      theme: {
+        color: '#dc2626'
+      }
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const message = `Hi, I want to register my trademark "${formData.brandName}". Contact: ${formData.contactNo}, Email: ${formData.email}`;
-    window.open(`https://wa.me/919884056282?text=${encodeURIComponent(message)}`, '_blank');
+    const rzp = new window.Razorpay(options);
+    rzp.open();
   };
 
   const processSteps = [
@@ -36,6 +45,8 @@ export default function TrademarksPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-blue-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
@@ -64,41 +75,184 @@ export default function TrademarksPage() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Column - Pricing & Payment */}
+          {/* Left Column - Service Details */}
           <div>
             <Card className="mb-8">
-              <CardHeader className="text-center">
-                <CardTitle className="text-3xl text-primary">Special Launch Offer!</CardTitle>
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center">
+                  <Shield className="w-8 h-8 text-primary mr-3" />
+                  Trademark Registration
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-center mb-6">
-                  <div className="flex justify-center items-center space-x-4 mb-4">
-                    <span className="text-5xl font-bold text-primary">₹6,999</span>
-                    <div>
-                      <span className="text-2xl text-gray-500 line-through">₹15,999</span>
-                      <div className="bg-red-500 text-white px-3 py-1 rounded text-sm font-bold">56% OFF</div>
+                <div className="space-y-4">
+                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                    <h3 className="text-xl font-semibold text-amber-800 mb-2">
+                      Special Offer
+                    </h3>
+                    <div className="flex items-center space-x-4">
+                      <span className="text-3xl font-bold text-primary">
+                        ₹6,999
+                      </span>
+                      <span className="text-lg text-gray-500 line-through">
+                        ₹15,999
+                      </span>
+                      <span className="bg-red-500 text-white px-2 py-1 rounded text-sm">
+                        56% OFF
+                      </span>
                     </div>
-                  </div>
-                  <p className="text-gray-600 mb-6">All-inclusive package • Government fees included</p>
-                  
-                  <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 mb-6">
-                    <h3 className="font-semibold text-amber-800 mb-2">🎉 Limited Time Offer</h3>
-                    <p className="text-amber-700">Valid till 31st December 2025</p>
-                    <p className="text-sm text-amber-600 mt-1">Register now and save ₹9,000!</p>
+                    <p className="text-amber-700 mt-2">
+                      Limited time offer - All inclusive package
+                    </p>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="text-center p-3 bg-blue-50 rounded-lg">
-                      <div className="text-lg font-bold text-primary">12-18</div>
-                      <div className="text-xs text-gray-600">Months Process</div>
+                  <div className="grid grid-cols-2 gap-4 mt-6">
+                    <div className="text-center p-4 bg-blue-50 rounded-lg">
+                      <div className="text-2xl font-bold text-primary">12-18</div>
+                      <div className="text-sm text-gray-600">Months Timeline</div>
                     </div>
-                    <div className="text-center p-3 bg-green-50 rounded-lg">
-                      <div className="text-lg font-bold text-green-600">10</div>
-                      <div className="text-xs text-gray-600">Years Validity</div>
+                    <div className="text-center p-4 bg-green-50 rounded-lg">
+                      <div className="text-2xl font-bold text-green-600">100%</div>
+                      <div className="text-sm text-gray-600">Success Rate</div>
                     </div>
-                    <div className="text-center p-3 bg-purple-50 rounded-lg">
-                      <div className="text-lg font-bold text-purple-600">45</div>
-                      <div className="text-xs text-gray-600">Classes Available</div>
+                  </div>
+
+                  <div className="mt-8">
+                    <h4 className="text-lg font-semibold mb-4">What's Included:</h4>
+                    <div className="space-y-2">
+                      {[
+                        'Comprehensive trademark search',
+                        'Professional application drafting',
+                        'Government filing & fees',
+                        'Status tracking & updates',
+                        'Opposition handling (if required)',
+                        'Certificate delivery',
+                        'Free consultation calls'
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 space-y-4">
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-primary hover:bg-red-700 text-lg py-3"
+                      onClick={handlePayment}
+                    >
+                      <CreditCard className="w-4 h-4 mr-2" />
+                      Pay Now - ₹6,999
+                    </Button>
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="w-full border-2 border-green-500 text-green-700 hover:bg-green-500 hover:text-white text-lg py-3"
+                      onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20want%20to%20know%20about%20trademark%20registration', '_blank')}
+                    >
+                      WhatsApp Consultation
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Registration Process</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    'Trademark search and clearance',
+                    'Application preparation and filing',
+                    'Examination by trademark office',
+                    'Publication in trademark journal',
+                    'Opposition period (if any)',
+                    'Registration certificate issuance',
+                    'Renewal maintenance support'
+                  ].map((step, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold mr-3 mt-1">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <p className="font-medium">{step}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column - Info */}
+          <div>
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle>Why Choose Trademark Registration?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start">
+                  <Shield className="w-6 h-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Brand Protection</h4>
+                    <p className="text-gray-600">
+                      Protect your brand name and logo from unauthorized use by competitors.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Legal Rights</h4>
+                    <p className="text-gray-600">
+                      Establish exclusive legal rights and the ability to take action against infringement.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Star className="w-6 h-6 text-primary mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold">Business Value</h4>
+                    <p className="text-gray-600">
+                      Increase your business valuation and create valuable intellectual property assets.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Required Documents</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {[
+                    'Trademark application form',
+                    'Logo/wordmark representation',
+                    'Applicant identification proof',
+                    'Address proof documents',
+                    'Power of attorney (if applicable)',
+                    'Priority document (if claiming priority)'
+                  ].map((doc, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                      <span>{doc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
                     </div>
                   </div>
                 </div>

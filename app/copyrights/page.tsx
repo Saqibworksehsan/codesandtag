@@ -3,6 +3,39 @@ import { CheckCircle, Clock, FileText, Shield } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function CopyrightsPage() {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Clock, FileText, Shield, CreditCard } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
+export default function CopyrightsPage() {
+  const handlePayment = () => {
+    const options = {
+      key: 'rzp_test_9WaeLb4ndt8j9E', // Replace with your Razorpay key
+      amount: 499900, // Amount in paise (₹4,999)
+      currency: 'INR',
+      name: 'Codes & Tags',
+      description: 'Copyright Registration Service',
+      image: '/logo2.png',
+      handler: function (response: any) {
+        alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+        // Redirect to form after successful payment
+        window.location.href = '/copyright-form';
+      },
+      theme: {
+        color: '#dc2626'
+      }
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
   const process = [
     "Document collection and verification",
     "Copyright application preparation",
@@ -13,6 +46,8 @@ export default function CopyrightsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-blue-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
@@ -101,8 +136,27 @@ export default function CopyrightsPage() {
                     </div>
                   </div>
 
-                  {/* ✅ Client button – no onClick prop passed from server */}
-                  <WhatsAppButton
+                  <div className="mt-8 space-y-4">
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-primary hover:bg-red-700 text-lg py-3"
+                      onClick={handlePayment}
+                    >
+                      <CreditCard className="w-4 h-4 mr-2" />
+                      Pay Now - ₹4,999
+                    </Button>
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="w-full border-2 border-green-500 text-green-700 hover:bg-green-500 hover:text-white text-lg py-3"
+                      onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20need%20help%20with%20copyright%20registration', '_blank')}
+                    >
+                      WhatsApp Consultation
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
                     size="lg"
                     className="w-full mt-6 bg-green-600 hover:bg-green-700 text-lg py-3"
                   />
