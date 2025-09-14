@@ -87,11 +87,11 @@
 }
 
 .minimal-button {
-  @apply bg-gray-900 text-white hover:bg-gray-800 border-0 font-normal;
+  @apply bg-red-600 text-white hover:bg-red-700 border-0 font-normal;
 }
 
 .minimal-input {
-  @apply border-gray-200 focus:border-gray-400 focus:ring-0 bg-white;
+  @apply border-gray-200 focus:border-red-400 focus:ring-0 bg-white;
 }
 
 .minimal-text {

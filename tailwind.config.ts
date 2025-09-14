@@ -31,7 +31,7 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
+          DEFAULT: 'hsl(0 84% 60%)', // Red color
           foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {

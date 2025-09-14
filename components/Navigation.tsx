@@ -77,7 +77,7 @@ export default function Navigation() {
 
             <Button 
               onClick={() => window.open('https://wa.me/919884056282?text=Hi,%20I%20want%20to%20know%20about%20your%20services', '_blank')}
-              className="minimal-button"
+              className="bg-red-600 hover:bg-red-700 text-white font-normal"
             >
               Get Started
             </Button>
@@ -130,7 +130,7 @@ export default function Navigation() {
                     window.open('https://wa.me/919884056282?text=Hi,%20I%20want%20to%20know%20about%20your%20services', '_blank');
                     closeMenu();
                   }}
-                  className="w-full minimal-button"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white font-normal"
                 >
                   Get Started
                 </Button>
