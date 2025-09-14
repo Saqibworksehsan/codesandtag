@@ -1,11 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Codes & Tags - Trademark & Copyright Registration Services',
@@ -28,7 +25,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/favicon2.png" />
       </Head>
-      <body className={inter.className}>
+      <body>
         <Navigation />
         <main>{children}</main>
         <Footer />
