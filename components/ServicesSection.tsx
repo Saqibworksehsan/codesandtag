@@ -42,20 +42,20 @@ export default function ServicesSection() {
     },
     {
       icon: Building,
-      title: 'Industrial Services',
-      description: 'Complete business setup and compliance solutions for industrial and manufacturing enterprises.',
+      title: 'MSME Consultancy',
+      description: 'Complete business setup and compliance solutions for micro, small & medium enterprises.',
       features: [
-        'Industrial registration',
+        'MSME registration',
         'Business compliance',
         'Legal documentation',
-        'Industrial advisory',
+        'Startup advisory',
         'Ongoing support'
       ],
       price: '₹2,999',
       originalPrice: '₹5,999',
       discount: '50% OFF',
       link: '/contact',
-      whatsappText: 'Hi, I need industrial consultancy services'
+      whatsappText: 'Hi, I need MSME consultancy services'
     }
   ];
 

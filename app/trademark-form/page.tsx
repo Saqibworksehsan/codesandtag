@@ -271,6 +271,14 @@ Please process this application.
                     >
                       {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </Button>
+                    <Button 
+                      type="button"
+                      onClick={handlePayment}
+                      className="bg-gray-600 hover:bg-gray-700 text-white flex-1"
+                    >
+                      <CreditCard className="w-4 h-4 mr-2" />
+                      Pay Now - ₹6,999
+                    </Button>
                   </div>
                 </form>
               </CardContent>
